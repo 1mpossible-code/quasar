@@ -1,5 +1,6 @@
 # Q.U.A.S.A.R. - Quantum Automated System for Advanced Recycling
 
+[<img src="https://qbraid-static.s3.amazonaws.com/logos/Launch_on_qBraid_white.png" width="150">](https://account.qbraid.com?gitHubUrl=https://github.com/1mpossible-code/quasar.git)
 
 ## Table of Contents
 - [Structure](#structure)
