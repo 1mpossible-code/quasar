@@ -45,7 +45,20 @@ Our performance comparision strongly supports the adoption of the quantum machin
 
 ## Set up
 
-Python notebooks with the processes included in the app/src/noteboooks directory.
+The code, model can be downloaded from (releases)[https://github.com/1mpossible-code/quasar/releases] tab.
+
+Additionally, the PyPi package can be installed to access [Quasar.py](https://github.com/1mpossible-code/quasar/blob/5c6b9ff9319ddaac8e55c204b1a1543f66a62666/app/src/Quasar.py) created for easy access by our team.
+The documentation is in progress, so for now, you can use the code as a reference.
+
+```bash
+pip install quantum-automated-system-for-advanced-recycling
+```
+
+Python:
+
+```python3
+from Quasar import Quasar
+```
 
 ## Acknowledgements
 
