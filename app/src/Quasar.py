@@ -7,7 +7,7 @@ import os
 
 
 class Quasar:
-    def __init__(self) -> None:
+    def __init__(self, train_dataset, test_dataset) -> None:
         self.q_train_images = []
         self.q_test_images = []
 
@@ -58,13 +58,13 @@ class Quasar:
         np.save(self.path + "q_train_images.npy", self.q_train_images)
         np.save(self.path + "q_test_images.npy", self.q_test_images)
 
-    def load(self, path="./quanvolution/") -> None:
+    def load(self, q_train_images, q_test_images) -> None:
         """
         Load pre-processed images from path if they exists. If the images do not exist, then
         pre-process using preprocess method and save them to the path.
         """
-        q_train_images = np.load(self.path + "q_train_images.npy")
-        q_test_images = np.load(self.path + "q_test_images.npy")
+        self.q_train_images = q_train_images
+        self.q_test_images = q_test_images
 
     @staticmethod
     def quanv(image):
@@ -140,11 +140,11 @@ class Quasar:
             verbose=2,
         )
 
-    def save(self, path="./quanvolution/"):
-        self.model.save(path + "quantum_model.h5")
+    def save_model(self, path):
+        self.model.save(path)
     
-    def load_model(self, path="./quanvolution/"):
-        self.model = keras.models.load_model(path + "quantum_model.h5")
+    def load_model(self, path):
+        self.model = keras.models.load_model(path)
     
     def evaluate(self):
         acc, loss = self.model.evaluate(self.q_test_images, self.y_test, verbose=2)
