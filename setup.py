@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 setup(
  name="quantum-automated-system-for-advanced-recycling",
- version='0.1',
+ version='0.1.1',
  description='Q.U.A.S.A.R. - Quantum Automated System for Advanced Recycling',
  url='https://github.com/1mpossible-code/quasar', 
  classifiers=[
@@ -21,4 +21,9 @@ setup(
  keywords=['python', 'quasar', 'qunatum', 'convolution', 'quanvolution'],
  packages=find_packages("app/src"),
  package_dir={"": "app/src"},
+install_requires=[
+    "pennylane ~= 0.32.0",
+    "tensorflow ~= 2.13.0",
+    "Pillow ~= 10.0.1",
+  ]
 )
