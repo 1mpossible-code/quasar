@@ -4,6 +4,7 @@ from pennylane.templates import RandomLayers
 import tensorflow as tf
 from tensorflow import keras
 import os
+from PIL import Image
 
 
 class Quasar:
@@ -33,7 +34,7 @@ class Quasar:
 
         self.x_test = self.x_test.reshape(self.x_test.shape[0], 32, 32, 3)
 
-        self.path = "./quanvolution/"
+        self.path = "./notebooks/quanvolution/"
 
         self.model = None
 
@@ -152,4 +153,29 @@ class Quasar:
         print ("Loss: {}".format(loss))
     
     def predict(self, image_path):
-        pass
+        # Load the JPG image
+        original_image = Image.open(image_path)
+
+        # Resize the loaded image without maintaining aspect ratio
+        desired_size = (32, 32)
+        original_image.resize(desired_size)
+
+        # Create a NumPy array from the resized image
+        image_array = np.array(original_image)
+
+        # Ensure the image has 3 channels (RGB)
+        if len(image_array.shape) == 2:
+            image_array = np.stack((image_array,) * 3, axis=-1)
+
+        # Optionally, normalize the pixel values to the range [0, 1]
+        image_array = image_array / 255.0
+
+        q_image = self.quanv(image_array)
+        result_raw = self.model.predict(np.asarray([q_image]))[0]
+
+        result = {}
+        
+        for index, val in enumerate(result_raw):
+            result[self.index_name[index]] = val
+        
+        return result
