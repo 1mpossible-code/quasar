@@ -17,5 +17,4 @@ model.train()
 
 model.evaluate()
 
-print(model.predict("./image.jpg"))
-# {'Box': #}
+print(model.predict("./image.jpg")) # {'Box': #}
