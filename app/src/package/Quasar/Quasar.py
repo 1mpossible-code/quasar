@@ -9,21 +9,18 @@ from PIL import Image
 
 class Quasar:
     def __init__(self, train_dataset, test_dataset) -> None:
+        self.index_name = ["Box", "Glass Bottle", "Soda Can", "Crushed Soda Can", "Plastic Bottle"]
+
         self.q_train_images = []
         self.q_test_images = []
-
-
-        # Load the recycled dataset
-        train_data = np.load('./notebooks/dataset/recycled_32_train.npz')
-        test_data = np.load('./notebooks/dataset/recycled_32_test.npz')
 
         # Extract the arrays
 
         # split data and labels
-        self.x_train = train_data['x']
-        self.y_train = train_data['y']
-        self.x_test = test_data['x']
-        self.y_test = test_data['y']
+        self.x_train = train_dataset['x']
+        self.y_train = train_dataset['y']
+        self.x_test = test_dataset['x']
+        self.y_test = test_dataset['y']
 
         # Preprocess the data
         self.x_train = self.x_train / 255.0
@@ -34,12 +31,10 @@ class Quasar:
 
         self.x_test = self.x_test.reshape(self.x_test.shape[0], 32, 32, 3)
 
-        self.path = "./notebooks/quanvolution/"
-
         self.model = None
 
 
-    def preprocess(self) -> None:
+    def preprocess(self, path) -> None:
         print("Quantum pre-processing of train images:")
         for idx, img in enumerate(self.x_train):
             print("{}/{}        ".format(idx + 1, self.n_train), end="\r")
@@ -52,12 +47,12 @@ class Quasar:
             self.q_test_images.append(Quasar.quanv(img))
         self.q_test_images = np.asarray(self.q_test_images)
 
-        if not os.path.exists(self.path):
-            os.makedirs(self.path)
+        if not os.path.exists(path):
+            os.makedirs(path)
 
         # Save pre-processed images
-        np.save(self.path + "q_train_images.npy", self.q_train_images)
-        np.save(self.path + "q_test_images.npy", self.q_test_images)
+        np.save(path + "q_train_images.npy", self.q_train_images)
+        np.save(path + "q_test_images.npy", self.q_test_images)
 
     def load(self, q_train_images, q_test_images) -> None:
         """
@@ -137,7 +132,7 @@ class Quasar:
             self.y_train,
             validation_data=(self.q_test_images, self.y_test),
             batch_size=32,
-            epochs=Quasar.get_params().n_epochs,
+            epochs=Quasar.get_params()["n_epochs"],
             verbose=2,
         )
 
