@@ -43,6 +43,18 @@ We compared the performance of classical model and quantum model under the same 
 
 Our performance comparision strongly supports the adoption of the quantum machine learning model for tasks where speed, accuracy, and model size efficiency are paramount. However, we acknowledge that addressing the loss metric remains a challenge and an area for potential improvement in future developments. These findings underscore the promising potential of quantum machine learning in various real-world applications and motivate further research to harness its strengths while mitigating its limitations.
 
+## Data
+
+The data used was rescaled and converted from original images to numpy arrays and stored in the dataset folder.
+
+|          | 1                                                 | 2                                                 | 3                                                 | 4                                                 | 5                                                 |
+|:--------:|:-------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|
+| Original | ![](./app/src/notebooks/dataset/original/1.jpg)   | ![](./app/src/notebooks/dataset/original/2.jpg)   | ![](./app/src/notebooks/dataset/original/3.jpg)   | ![](./app/src/notebooks/dataset/original/4.jpg)   | ![](./app/src/notebooks/dataset/original/5.jpg)   |
+| Rescaled | ![](./app/src/notebooks/dataset/rescaled/1.jpg)   | ![](./app/src/notebooks/dataset/rescaled/2.jpg)   | ![](./app/src/notebooks/dataset/rescaled/3.jpg)   | ![](./app/src/notebooks/dataset/rescaled/4.jpg)   | ![](./app/src/notebooks/dataset/rescaled/5.jpg)   |
+
+
+
+
 ## Set up
 
 The code, model can be downloaded from (releases)[https://github.com/1mpossible-code/quasar/releases] tab.
