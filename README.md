@@ -47,13 +47,10 @@ Our performance comparision strongly supports the adoption of the quantum machin
 
 The data used was rescaled and converted from original images to numpy arrays and stored in the dataset folder.
 
-|          | 1                                                 | 2                                                 | 3                                                 | 4                                                 | 5                                                 |
-|:--------:|:-------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|
-| Original | ![](./app/src/notebooks/dataset/original/1.jpg)   | ![](./app/src/notebooks/dataset/original/2.jpg)   | ![](./app/src/notebooks/dataset/original/3.jpg)   | ![](./app/src/notebooks/dataset/original/4.jpg)   | ![](./app/src/notebooks/dataset/original/5.jpg)   |
-| Rescaled | ![](./app/src/notebooks/dataset/rescaled/1.jpg)   | ![](./app/src/notebooks/dataset/rescaled/2.jpg)   | ![](./app/src/notebooks/dataset/rescaled/3.jpg)   | ![](./app/src/notebooks/dataset/rescaled/4.jpg)   | ![](./app/src/notebooks/dataset/rescaled/5.jpg)   |
-
-
-
+|          |                        1                        |                        2                        |                        3                        |                        4                        |                        5                        |
+| :------: | :---------------------------------------------: | :---------------------------------------------: | :---------------------------------------------: | :---------------------------------------------: | :---------------------------------------------: |
+| Original | ![](./app/src/notebooks/dataset/original/1.jpg) | ![](./app/src/notebooks/dataset/original/2.jpg) | ![](./app/src/notebooks/dataset/original/3.jpg) | ![](./app/src/notebooks/dataset/original/4.jpg) | ![](./app/src/notebooks/dataset/original/5.jpg) |
+| Rescaled | ![](./app/src/notebooks/dataset/rescaled/1.jpg) | ![](./app/src/notebooks/dataset/rescaled/2.jpg) | ![](./app/src/notebooks/dataset/rescaled/3.jpg) | ![](./app/src/notebooks/dataset/rescaled/4.jpg) | ![](./app/src/notebooks/dataset/rescaled/5.jpg) |
 
 ## Set up
 
@@ -66,10 +63,31 @@ The documentation is in progress, so for now, you can use the code as a referenc
 pip install quantum-automated-system-for-advanced-recycling
 ```
 
-Python:
+[Python Example](./app/src/package/Quasar/example.py)
 
 ```python3
+# File: app/src/package/Quasar/example.py
 from Quasar import Quasar
+import numpy as np
+
+train_dataset = np.load("./notebooks/dataset/recycled_32_train.npz")
+
+test_dataset = np.load("./notebooks/dataset/recycled_32_test.npz")
+
+model = Quasar(train_dataset, test_dataset)
+
+model.preprocess("./notebooks/quanvolution/")
+
+q_train_images = np.load("./notebooks/quanvolution/q_train_images.npy")
+q_test_images = np.load("./notebooks/quanvolution/q_test_images.npy")
+
+model.load(q_train_images, q_test_images)
+
+model.train()
+
+model.evaluate()
+
+print(model.predict("./image.jpg"))
 ```
 
 ## Acknowledgements
