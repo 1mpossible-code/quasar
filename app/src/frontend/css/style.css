@@ -124,7 +124,7 @@ img.alignright {
 blockquote {
     font-size: 16px;
     line-height: 32px;
-    font-family: 'Droid Serif', Georgia, "Times New Roman", serif;
+    font-family: "Droid Serif", Georgia, "Times New Roman", serif;
     font-weight: normal;
     font-style: italic;
     position: relative;
@@ -156,7 +156,7 @@ sup {
 }
 
 sub {
-    top: .5ex;
+    top: 0.5ex;
 }
 
 p {
@@ -182,7 +182,7 @@ p {
 
 .check {
     margin-left: 0;
-    padding-left: 0
+    padding-left: 0;
 }
 
 .section {
@@ -251,7 +251,7 @@ h4 a {
 }
 
 .intro1 a {
-    color: #0E97EE !important;
+    color: #0e97ee !important;
 }
 
 .intro a {
@@ -291,14 +291,14 @@ h4 a {
 }
 
 mark {
-    background-color: #0E97EE;
+    background-color: #0e97ee;
     color: #ffffff;
     padding: 0 10px;
 }
 
 a:focus,
 a:hover {
-    color: #0E97EE;
+    color: #0e97ee;
 }
 
 .intro2 i {
@@ -307,8 +307,8 @@ a:hover {
 }
 
 .intro2 {
-    background-color: #0E97EE;
-    border: 2px solid #2187BB;
+    background-color: #0e97ee;
+    border: 2px solid #2187bb;
     border-radius: 5px;
     color: #ffffff;
     font-style: italic;
@@ -329,13 +329,13 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: #0E97EE;
-    border: 1px solid #2187BB;
+    background-color: #0e97ee;
+    border: 1px solid #2187bb;
 }
 
 .btn-primary:hover {
-    background-color: #2187BB;
-    border: 1px solid #0E97EE;
+    background-color: #2187bb;
+    border: 1px solid #0e97ee;
 }
 
 .btn-info {
@@ -351,7 +351,7 @@ a:hover {
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-    background-color: #0E97EE;
+    background-color: #0e97ee;
     color: #fff;
 }
 
@@ -369,23 +369,84 @@ a:hover {
     color: #ffffff !important;
 }
 #myBtn {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  height:40px;
-  width:40px;
-  bottom: 55px;
-  right: 20px;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: grey;
-  color:#ffff;
-  cursor: pointer;
-  padding: 0px;
-  border-radius: 50%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+    bottom: 55px;
+    right: 20px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: grey;
+    color: #ffff;
+    cursor: pointer;
+    padding: 0px;
+    border-radius: 50%;
 }
 
 #myBtn:hover {
-  background-color: #404040;
+    background-color: #404040;
+}
+
+.flex_container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.flex_container h4 {
+    margin-top: 20px;
+    padding: 0;
+}
+
+.table {
+    width: 100%;
+}
+
+.table > tr {
+    border: 1px solid;
+}
+
+td {
+    border: 1px solid #ddd;
+    height: 100%;
+}
+
+.image_container {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    height: 100%;
+}
+
+.image_container > img {
+    width: 140px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: none;
+    background-color: transparent;
+}
+
+.image_container_rescaled {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    height: 100%;
+}
+
+.image_container_rescaled > img {
+    margin-left: auto;
+    margin-right: auto;
+
+    border: none;
+    background-color: transparent;
+}
+
+.table_text {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
 }
