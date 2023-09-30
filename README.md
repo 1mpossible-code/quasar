@@ -1,11 +1,22 @@
 # Q.U.A.S.A.R. - Quantum Automated System for Advanced Recycling
 
+![GitHub](https://img.shields.io/github/license/1mpossible-code/quasar?style=for-the-badge)
+![PyPI - Downloads](https://img.shields.io/pypi/dw/quantum-automated-system-for-advanced-recycling?style=for-the-badge)
+![PyPI - Status](https://img.shields.io/pypi/status/quantum-automated-system-for-advanced-recycling?style=for-the-badge)
+![GitHub release (with filter)](https://img.shields.io/github/v/release/1mpossible-code/quasar?style=for-the-badge)
+![GitHub Release Date - Published_At](https://img.shields.io/github/release-date/1mpossible-code/quasar?style=for-the-badge)
+![PyPI - Version](https://img.shields.io/pypi/v/quantum-automated-system-for-advanced-recycling?style=for-the-badge&link=https%3A%2F%2Fpypi.org%2Fproject%2Fquantum-automated-system-for-advanced-recycling%2F)
+![GitHub file size in bytes on a specified ref (branch/commit/tag)](https://img.shields.io/github/size/1mpossible-code/quasar/app%2Fsrc%2Fnotebooks%2Fmodel%2Fquantum_model.h5?style=for-the-badge)
+[<img src="https://qbraid-static.s3.amazonaws.com/logos/Launch_on_qBraid_white.png" width="150">](https://account.qbraid.com?gitHubUrl=https://github.com/1mpossible-code/quasar.git)
+
+
 ## Table of Contents
 
 -   [Motivation](#Motivation)
 -   [Project description](#Porject-description)
 -   [How it works](#How-it-works)
 -   [Model Performance](#Model-Performance)
+-   [Data](#Data)
 -   [Set up](#Set-up)
 -   [Acknowledgements](#Acknowledgements)
 
