@@ -23,19 +23,17 @@ The future of recycling systems is at an exciting crossroads, where cutting-edge
 
 ## How it works
 
-We use the quantum convolution neural network (QCNN) to build the machine learning algorithm. Unlike the convolutional neural network (CNN), which is using classical convolution, quantum convolution utilized the advantage of quantum computing by extending the idea of classical convolution. The appracoh we are using to achieve quantum convolution goes as follows:
+Our machine learning algorithm is built upon the Quantum Convolution Neural Network. Unlike the conventional Convolutional Neural Network, which employs classical convolution techniques, our approach harnesses the advantages of quantum computing to extend the concept of classical convolution. The process for achieving quantum convolution unfolds as follows:
 
-we embed a small region of the image into the quantum circuit (2 by 2 square region in our implementation) by parametrized rotations applied to the qubits initialized in the ground state.
+We begin by embedding a small image region (typically a 2 by 2 square in our implementation) into a quantum circuit. This is accomplished through parametrized rotations applied to qubits initialized in the ground state.
 
-Then, We apply a layer of random unitary circuit U on the system to the qubits we got from previous step.
+Subsequently, we apply a layer of a random unitary circuit, denoted as U, to the qubits obtained in the previous step.
 
-After that, we measure the quantum system, and obtain a list of classical expectation values. We then map each expectation value into a different channel of a single output pixel.
+Following this, we measure the quantum system, resulting in a collection of classical expectation values. Each of these expectation values is then mapped to a distinct channel within a single output pixel.
 
-We iterate the same procedure over other regions until all the regions of the image is scanned, and we got an output object which will be structured as a multi-channel image.
+We repeat this procedure across all regions of the image until the entire image has been scanned. The result is an output object structured as a multi-channel image.
 
-We then apply the classical neural network layers to the processed image.
-
-The primary distinction compared to a classical convolution is that a quantum circuit can produce exceedingly intricate kernels, the calculation of which could, in theory, be challenging for classical computers.
+Finally, classical neural network layers are applied to the processed image.
 
 ## Model Performance
 
@@ -66,28 +64,39 @@ pip install quantum-automated-system-for-advanced-recycling
 [Python Example](./app/src/package/Quasar/example.py)
 
 ```python3
-# File: app/src/package/Quasar/example.py
 from Quasar import Quasar
 import numpy as np
 
-train_dataset = np.load("./notebooks/dataset/recycled_32_train.npz")
+# Load data sets for training and testing
+# Datasets can be accessed on releases page
+train_dataset = np.load("./recycled_32_train.npz")
+test_dataset = np.load("./recycled_32_test.npz")
 
-test_dataset = np.load("./notebooks/dataset/recycled_32_test.npz")
-
+# Create Quasar instance
 model = Quasar(train_dataset, test_dataset)
 
-model.preprocess("./notebooks/quanvolution/")
+# Preprocess images. It will save the pre-processed images to the directory specified.
+model.preprocess("./quanvolution/")
 
-q_train_images = np.load("./notebooks/quanvolution/q_train_images.npy")
-q_test_images = np.load("./notebooks/quanvolution/q_test_images.npy")
+# Load pre-processed images from numpy arrays
+# q_train_images and q_test_images are default names
+q_train_images = np.load("./quanvolution/q_train_images.npy")
+q_test_images = np.load("./quanvolution/q_test_images.npy")
 
+# Load the pre-processed images in the model
 model.load(q_train_images, q_test_images)
 
+# Train the model
 model.train()
 
+# Evaluate the model
 model.evaluate()
 
+# Print the prediction of the model on a single image
+# It will output the index of the class with the highest probability and hardcoded name.
+# In format {'name': prediction_result}
 print(model.predict("./image.jpg"))
+# {'Box': #}
 ```
 
 ## Acknowledgements
