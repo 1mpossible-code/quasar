@@ -183,11 +183,13 @@
                                                         <strong
                                                             >Authors :
                                                         </strong>
-                                                        Team "rm -rf /": Qianxi
-                                                        Chen, Ilayda Dilek,
-                                                        Ethan Feldman, Karan
-                                                        Shah, Maksym
-                                                        Yemelianenko, Yufei Zhen
+                                                        Team <strong>"rm -rf /"</strong>: 
+                                                        <a href="https://github.com/qianxichen233">Qianxi Chen,</a>
+                                                        <a href="https://github.com/ilayd-a">Ilayda Dilek,</a>
+                                                        <a href="https://github.com/EthanFeld">Ethan Feldman,</a>
+                                                        <a href="https://github.com/kshah0301"> Karan Shah,</a>
+                                                        <a href="https://github.com/1mpossible-code">Maksym Yemelianenko,</a>
+                                                        <a href="https://github.com/lastminwarrior-fei">Yufei Zhen</a>
                                                     </li>
                                                     <li>
                                                         <strong
@@ -261,7 +263,7 @@
                             <!-- end row -->
 
                             <p>     
-                                The future of recycling systems is at an exciting crossroads, where cutting-edge technology intersects with environmental sustainability. In this pioneering project, we at Qausar (Quantum Automated System for Advanced Recycling) delve into the realm of quantum convolutional neural networks (QCNNs) to revolutionize recycling efficiency and accuracy, surpassing the capabilities of traditional convolutional neural networks (CNNs). Our research centers on the development of two distinct models: a classical CNN and a quantum CNN, aiming to determine whether QCNNs can pave the way for a more sustainable recycling paradigm.  
+                                The future of recycling systems is at an exciting crossroads, where cutting-edge technology intersects with environmental sustainability. In this pioneering project, we at Qausar delve into the realm of quantum convolutional neural networks to revolutionize recycling efficiency and accuracy, surpassing the capabilities of traditional convolutional neural networks. Our research centers on the development of two distinct models: a classical CNN and a quantum CNN, aiming to determine whether QCNNs can pave the way for a more sustainable recycling paradigm.  
                             </p>
                         </section>
                         <!-- end section -->
@@ -280,7 +282,7 @@
                             <!-- end row -->
 
                             <p>
-                                Our machine learning algorithm is built upon the Quantum Convolution Neural Network (QCNN). Unlike the conventional Convolutional Neural Network (CNN), which employs classical convolution techniques, our approach harnesses the advantages of quantum computing to extend the concept of classical convolution. The process for achieving quantum convolution unfolds as follows:
+                                Our machine learning algorithm is built upon the Quantum Convolution Neural Network. Unlike the conventional Convolutional Neural Network, which employs classical convolution techniques, our approach harnesses the advantages of quantum computing to extend the concept of classical convolution. The process for achieving quantum convolution unfolds as follows:
                             </p>
                             <ol>
                                 <li>
@@ -308,42 +310,6 @@
                                 <div class="col-md-12 left-align">
                                     <h2 class="dark-text">
                                         How to Set Up
-                                        <hr/>
-                                    </h2>
-                                </div>
-                                <!-- end col -->
-                            </div>
-                            <!-- end row -->
-
-                            <p>
-                                Our machine learning algorithm is built upon the Quantum Convolution Neural Network (QCNN). Unlike the conventional Convolutional Neural Network (CNN), which employs classical convolution techniques, our approach harnesses the advantages of quantum computing to extend the concept of classical convolution. The process for achieving quantum convolution unfolds as follows:
-                            </p>
-                            <ol>
-                                <li>
-                                    We begin by embedding a small image region (typically a 2 by 2 square in our implementation) into a quantum circuit. This is accomplished through parametrized rotations applied to qubits initialized in the ground state.
-                                </li>
-                                <li>
-                                    Subsequently, we apply a layer of a random unitary circuit, denoted as U, to the qubits obtained in the previous step.
-                                </li>
-                                <li>
-                                    Following this, we measure the quantum system, resulting in a collection of classical expectation values. Each of these expectation values is then mapped to a distinct channel within a single output pixel.
-                                </li>
-                                <li>
-                                    We repeat this procedure across all regions of the image until the entire image has been scanned. The result is an output object structured as a multi-channel image.
-                                </li>
-                                <li>
-                                    Finally, classical neural network layers are applied to the processed image.
-                                </li>
-                            </ol>
-                            </ol>
-                        </section>
-                     <!-- end section -->
-
-                        <section id="line4" class="section">
-                            <div class="row">
-                                <div class="col-md-12 left-align">
-                                    <h2 class="dark-text">
-                                        How to Set Up
                                         <hr />
                                     </h2>
                                 </div>
@@ -354,7 +320,7 @@
     
                             <h4>Setting Up</h4>
                             <p>
-                                The code, model can be downloaded from (releases)[https://github.com/1mpossible-code/quasar/releases] tab.
+                                The code, model can be downloaded from<a href=[https://github.com/1mpossible-code/quasar/releases]> the(releases)</a> tab.
                             </p>
 
                             <p>
@@ -366,7 +332,7 @@
                             <h4>
                                 Python:
                             </h4>
-                            <pre class="brush: bash; highlight: [2,4]">from Quasar import Quasar
+                            <pre class="brush: python; highlight: [2,4]">from Quasar import Quasar
                             </pre>
                         
                         <section id="line5" class="section">
@@ -390,9 +356,9 @@
                                     />
                                     <h4>Accuracy Plot</h4>
                                     <p>
-                                        Lorem the It is a long established fact
-                                        that a reader will be distracted..
-                                        Please read more about WordPress here.
+                                        The average accuracy for the classical model was 75%, 
+                                        whereas the accuracy for the quantum/hydrid model 
+                                        was 83%. 
                                     </p>
                                 </div>
                                 <!-- end col -->
@@ -405,9 +371,8 @@
                                     />
                                     <h4>Input Size Plot</h4>
                                     <p>
-                                        Lorem the It is a long established fact
-                                        that a reader will be distracted..
-                                        Please read more about WordPress here.
+                                        The average input size for the classical model was 0.65 Mb,
+                                        whereas the input size for the quantum/hybrid model was 0.78 Mb. 
                                     </p>
                                 </div>
                                 <!-- end col -->
@@ -420,23 +385,34 @@
                                     />
                                     <h4>Loss Plot</h4>
                                     <p>
-                                        Lorem the It is a long established fact
-                                        that a reader will be distracted..
-                                        Please read more about WordPress here.
+                                        The average loss for the classical model was 0.654, whereas the 
+                                        loss for the quantum/hybrid model was 0.783.
                                     </p>
                                 </div>
 
                                 <div class="col-md-4">
                                     <img
-                                        src="images/time_plot.png"
+                                        src="images/time_train_plot.png"
                                         alt=""
                                         class="img-responsive img-thumbnail"
                                     />
-                                    <h4>Time Plot</h4>
+                                    <h4>Training Time Plot</h4>
                                     <p>
-                                        Lorem the It is a long established fact
-                                        that a reader will be distracted..
-                                        Please read more about WordPress here.
+                                        The average training time for the classical model was 16.93 seconds,
+                                        whereas the training time for the quantum/hybrid model was 9.50 seconds.
+                                    </p>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <img
+                                        src="images/time_test_plot.png"
+                                        alt=""
+                                        class="img-responsive img-thumbnail"
+                                    />
+                                    <h4>Test Time Plot</h4>
+                                    <p>
+                                        The average testing time for the classical model was 0.113 seconds,
+                                        whereas the testing time for the quantum/hybrid model was 0.042 seconds.
                                     </p>
                                 </div>
                                 <!-- end col -->
@@ -461,10 +437,10 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p>
-                                        Core Devs: Team "rm -rf /": Maksym Yemelianenko, Qianxi Chen, Ilayda Dilek, Ethan Feldman, Karan Shah, Yufei Zhen
+                                        Core Devs: Team <strong>"rm -rf /"</strong>: Maksym Yemelianenko, Qianxi Chen, Ilayda Dilek, Ethan Feldman, Karan Shah, Yufei Zhen
                                     </p>
                                     <p>
-                                        This project was created at the 2023 hAQathon ((AQ = AI + Quantum)) at NYU Tandon: the first quantum computing hackathon hosted at NYU Tandon.
+                                        This project was created at the 2023 hAQathon (AQ = AI + Quantum) at NYU Tandon: the first quantum computing hackathon hosted at NYU Tandon.
                                     </p>
                                 </div>
                                 <!-- end col -->
@@ -474,41 +450,7 @@
                         <!-- end section -->
 
 
-                        <section id="line11" class="section">
-                            <div class="row">
-                                <div class="col-md-12 left-align">
-                                    <h2 class="dark-text">
-                                        Copyright and license
-                                        <hr />
-                                    </h2>
-                                </div>
-                                <!-- end col -->
-                            </div>
-                            <!-- end row -->
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>
-                                        Code released under the
-                                        <a href="#" target="_blank"
-                                            >Un License</a
-                                        >
-                                        License.
-                                    </p>
-                                    <p>
-                                        For more information about copyright and
-                                        license check
-                                        <a
-                                            href=" https://choosealicense.com/licenses/unlicense/"
-                                            target="_blank"
-                                            >choosealicense.com</a
-                                        >.
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- end row -->
-                        </section>
-                        <!-- end section -->
+                        
                     </div>
                     <!-- // end .col -->
                 </div>
@@ -534,5 +476,6 @@
         <script src="js/syntax-highlighter/scripts/shBrushCss.js"></script>
         <script src="js/syntax-highlighter/scripts/shBrushJScript.js"></script>
         <script src="js/syntax-highlighter/scripts/shBrushBash.js"></script>
+        <script src="js/syntax-highlighter/scripts/shBrushPython.js"></script>
     </body>
 </html>
